@@ -55,7 +55,7 @@ export const mockUsers: User[] = [
 export const mockPhysicalCards: PhysicalCard[] = [
   {
     id: "1",
-    cardNumber: "1234567890123456",
+    cardNumber: "0207031018123456",
     userId: "1",
     status: "active",
     balance: 500000,

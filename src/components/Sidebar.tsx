@@ -134,7 +134,7 @@ export default function Sidebar({ children }: SidebarProps) {
       {/* Sidebar */}
       <div
         className={cn(
-          "fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0",
+          "fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg rounded-lg border border-green-700 transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0",
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
@@ -188,7 +188,7 @@ export default function Sidebar({ children }: SidebarProps) {
       {/* Main content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Header */}
-        <header className="bg-white shadow-sm border-b border-gray-200">
+        <header className="bg-white shadow-sm rounded-lg border border-green-700">
           <div className="flex items-center justify-between h-16 px-6">
             {/* Mobile menu button - Left side */}
             <button
