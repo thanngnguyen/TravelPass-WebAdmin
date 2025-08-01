@@ -1,36 +1,194 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TravelPass Admin Dashboard
 
-## Getting Started
+TravelPass là hệ thống thẻ đa năng tương tự như Octopus Card của Hong Kong. Đây là giao diện quản trị để điều hành toàn bộ hệ thống.
 
-First, run the development server:
+## 🚀 Tính năng chính
+
+### 📋 Dashboard Tổng quan
+
+- Tổng số người dùng, thẻ hoạt động
+- Số lượng giao dịch hôm nay
+- Tổng số tiền đã giao dịch
+- Biểu đồ top-up theo ngày
+- Thống kê giao dịch theo địa điểm/kiosk
+
+### 👤 Quản lý người dùng
+
+- Danh sách và tìm kiếm người dùng
+- Duyệt/từ chối hồ sơ KYC
+- Khóa/mở tài khoản người dùng
+- Xem lịch sử giao dịch và thẻ/ví
+
+### 💳 Quản lý thẻ vật lý
+
+- Danh sách thẻ và trạng thái
+- Gắn thẻ cho người dùng
+- Cập nhật trạng thái (kích hoạt, khóa, hết hạn)
+- Nạp tiền vào thẻ (top-up)
+- Xem lịch sử sử dụng
+
+### 👜 Quản lý ví điện tử
+
+- Danh sách ví và số dư
+- Khóa/mở ví
+- Xem lịch sử giao dịch
+
+### 💸 Quản lý giao dịch
+
+- Lọc theo thời gian, người dùng, kiosk, trạng thái
+- Chi tiết giao dịch (số tiền gốc, quy đổi, tỷ giá)
+- Thống kê doanh thu, phí giao dịch
+- Xuất báo cáo (CSV, PDF)
+
+### 🔁 Quản lý nạp tiền (Top-up)
+
+- Danh sách lệnh nạp và trạng thái
+- Kiểm tra giao dịch nghi vấn
+- Cập nhật trạng thái thủ công
+- Thống kê theo kiosk, người dùng
+
+### 💱 Quản lý tỷ giá hối đoái
+
+- Danh sách tỷ giá theo ngày
+- Cập nhật thủ công
+- Kiểm tra tỷ giá hiệu lực
+
+### 🏪 Quản lý kiosk
+
+- Danh sách kiosk và vị trí
+- Kiểm tra trạng thái hoạt động
+- Ghi nhận bảo trì
+- Xem trên Google Maps
+
+### 🏷️ Quản lý merchant
+
+- Danh sách merchant đối tác
+- Gán tỉ lệ hoa hồng
+- Theo dõi giao dịch
+- Quản lý thiết bị POS
+
+### 🔐 Quản lý Admin users
+
+- Tạo tài khoản admin
+- Phân quyền theo module
+- Khóa/kích hoạt tài khoản
+- Xem nhật ký đăng nhập
+
+## 🛠️ Công nghệ sử dụng
+
+- **Frontend**: Next.js 15, React, TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: Headless UI, Heroicons
+- **Charts**: Recharts
+- **Icons**: Lucide React
+- **Utils**: Date-fns, Clsx, Tailwind Merge
+
+## 🏗️ Cấu trúc dự án
+
+```
+src/
+├── app/
+│   ├── dashboard/
+│   │   ├── page.tsx           # Dashboard chính
+│   │   ├── users/             # Quản lý người dùng
+│   │   ├── cards/             # Quản lý thẻ vật lý
+│   │   ├── wallets/           # Quản lý ví điện tử
+│   │   ├── transactions/      # Quản lý giao dịch
+│   │   ├── topups/           # Quản lý nạp tiền
+│   │   ├── exchange-rates/   # Quản lý tỷ giá
+│   │   ├── kiosks/           # Quản lý kiosk
+│   │   ├── merchants/        # Quản lý merchant
+│   │   └── admins/           # Quản lý admin
+├── components/
+│   └── Sidebar.tsx           # Navigation sidebar
+├── lib/
+│   ├── utils.ts              # Utility functions
+│   └── mock-data.ts          # Mock data for demo
+└── types/
+    └── index.ts              # TypeScript type definitions
+```
+
+## 🚀 Cài đặt và chạy
+
+1. **Clone repository**:
+
+```bash
+git clone <repository-url>
+cd travel-pass
+```
+
+2. **Cài đặt dependencies**:
+
+```bash
+npm install
+```
+
+3. **Chạy development server**:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. **Mở trình duyệt**: http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📱 Responsive Design
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Giao diện được thiết kế responsive, hoạt động tốt trên:
 
-## Learn More
+- Desktop (1024px+)
+- Tablet (768px - 1023px)
+- Mobile (320px - 767px)
 
-To learn more about Next.js, take a look at the following resources:
+## 🔧 Customization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Thêm module mới
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Tạo folder trong `src/app/dashboard/`
+2. Tạo `page.tsx` cho trang chính
+3. Thêm route vào `navigationItems` trong `Sidebar.tsx`
+4. Định nghĩa types trong `src/types/index.ts`
+5. Thêm mock data trong `src/lib/mock-data.ts`
 
-## Deploy on Vercel
+### Styling
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Sử dụng Tailwind CSS classes
+- Colors: Blue (primary), Green (success), Red (danger), Yellow (warning)
+- Components sử dụng Headless UI cho accessibility
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Icons
+
+- Heroicons cho UI icons
+- Lucide React cho additional icons
+
+## 🔐 Security Notes
+
+Đây là demo version sử dụng mock data. Trong production:
+
+- Implement proper authentication & authorization
+- Use secure API endpoints
+- Validate all user inputs
+- Implement audit logs
+- Use HTTPS
+- Protect sensitive data
+
+## 📊 Data Management
+
+Current implementation sử dụng mock data. Để tích hợp API thực:
+
+1. Thay thế mock data calls bằng API calls
+2. Implement loading states
+3. Add error handling
+4. Use state management (Redux, Zustand)
+5. Implement caching strategy
+
+## 🤝 Contributing
+
+1. Fork repository
+2. Create feature branch
+3. Commit changes
+4. Push to branch
+5. Create Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License.
