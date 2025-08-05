@@ -1,6 +1,14 @@
 # TravelPass Admin Dashboard
 
-TravelPass là hệ thống thẻ đa năng tương tự như Octopus Card của Hong Kong. Đây là giao diện quản trị để điều hành toàn bộ hệ thống.
+Mục tiêu: Tạo ra một hệ thống thẻ thông minh và ứng dụng di động không tiếp xúc, hỗ trợ thanh toán giao thông công cộng, dịch vụ du lịch, và bán lẻ, với trọng tâm là khách du lịch quốc tế.
+
+Tên gọi: TravelPass – tượng trưng cho sự dễ dàng và linh hoạt khi khám phá một điểm đến.
+
+Công nghệ: Kết hợp RFID/NFC (FeliCa hoặc MIFARE), tích hợp với ví di động (Apple Pay, Google Pay, WeChat Pay), và mã QR cho các thiết bị không hỗ trợ NFC.
+
+Đối tượng: Khách du lịch quốc tế, khách nội địa, và cư dân địa phương.
+
+Phạm vi: Giao thông công cộng, điểm tham quan du lịch, nhà hàng, cửa hàng bán lẻ, khách sạn, và các dịch vụ liên quan đến du lịch.
 
 ## 🚀 Tính năng chính
 
